@@ -1,0 +1,33 @@
+<html>
+  <head></head>
+  <body>
+  {{ "now"|date("d M Y h:i")  }} <br/>
+  {{ "now"|date("d/m/y")  }}
+
+  {{ "the cow jumped over the moon"|upper  }} <br/>
+  {{ "the cow jumped over the moon"|capitalize  }} <br/>
+  {{ "the cow jumped over the moon"|title  }} <br/>
+  {{ "The Cow jumped over the Moon"|lower  }} <br/>
+
+
+{{ "<div>I said \"<b>Go away!</b>\"</div>"|striptags  }} <br/>
+
+{{ "I want a red boat"|replace({"red" : "yellow", "boat" : "sports car"})  }} 
+
+  Escaped output: {{ html|escape }} <br/>
+ 
+  Raw output: {{ html|raw }} <br/>
+
+  {% autoescape true %}
+  Escaped output: {{ html }} <br/>
+  {% endautoescape %}
+ 
+ 
+<p> Если же вам нужно применить `escape` к большому блоку кода, то вы можете воспользоваться синтаксисом `autoescape`, передав булево значение true/false для активации и дезактивации фильтрации `escape`. 
+</p>
+  {% autoescape false %}
+  Raw output: {{ html }}
+  {% endautoescape %}
+
+  </body>
+</html>

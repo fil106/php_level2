@@ -1,0 +1,18 @@
+<!-- begin: primary.tmpl -->
+    <table>
+      <tr>
+        {% for item in nav.primary %}
+        <td><a href="{{ item.url }}">{{ item.name|upper }}</a></td>
+		  <td><a href="{{ item.url }}">{{ item.name|capitalize }}</a></td>
+		  <td><a href="{{ item.url }}">{{ item.name|title }}</a></td>
+		  <td><a href="{{ item.url }}">{{ item.name|lower }}</a></td>
+        {% endfor %}
+      </tr>
+    </table>
+
+{{ "<div> Lorem ipsum <b>Lorem ipsum dolor sit amet, consectetur.</b>dolor sit.</div>"|striptags }}
+<br>
+{{ "<div> Lorem ipsum <b>Lorem ipsum dolor sit amet, consectetur.</b>dolor sit.</div>"|escape }}
+<br>
+{{ "<div> Lorem ipsum <b>Lorem ipsum dolor sit amet, consectetur.</b>dolor sit.</div>"|raw }}
+<!-- end: primary.tmpl -->

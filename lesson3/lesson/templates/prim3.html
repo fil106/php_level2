@@ -1,0 +1,18 @@
+<html>
+	  <head></head>
+	  <body>
+	    <h2>Текущее время года</h2>
+			{% if month > 0 and month <= 2 %}
+            	На улице еще зима
+            {% elseif month >2 and month <=5 %}
+            	На улице весна   
+                <h1>Заголовок к лету!!!</h1>
+            {% elseif month > 5 and month <= 8 %}
+            	На улице лето
+            {% elseif month > 8 and month <=11 %}
+            	Началась осень
+            {% elseif month >11 and month <= 12 %}
+            	Началась зима
+            {% endif %}                
+	  </body>
+	</html>
