@@ -82,11 +82,11 @@
 		/*
 		 * Метод выполняет запрос с выборкой данных для одной строки
 		 */
-		public function selectRow($sql, array $values = [], $fetchStyle = null)
+		public function selectRow($sql, array $values = [])
 		{
 
 			$stmt = $this->query($sql, $values);
-			if ($stmt) return $stmt->fetchAll($fetchStyle)[0];
+			if ($stmt) return $stmt->fetchAll()[0];
 
 		}
 

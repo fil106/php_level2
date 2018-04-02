@@ -46,7 +46,7 @@
 
 			case "grid":
 
-				$sql = "select `name`, `price`, `foto`, `date`, `view`, `short_description` from goods limit 6";
+				$sql = "select * from goods limit 6";
 
 				$vars['content'] = '../templates/grid.php';
 				$vars['goods'] = Db::getInstance()->select($sql);
@@ -94,19 +94,19 @@
 
 	function NewProduct()
 	{
-		$sql = 'select * from goods order by date desc limit 6;';
+		$sql = 'select * from goods order by date desc limit 6';
 		return Db::getInstance()->select($sql);
 	}
 
 	function TopProduct()
 	{
-		$sql = 'select * from goods order by view desc, date desc limit 3;';
+		$sql = 'select * from goods order by view desc, date desc limit 3';
 		return Db::getInstance()->select($sql);
 	}
 
 	function SaleProduct()
 	{
-		$sql = 'select * from goods where status = "2" order by view desc limit 3;';
+		$sql = 'select * from goods where status = "2" order by view desc limit 3';
 		return Db::getInstance()->select($sql);
 	}
 

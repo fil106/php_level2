@@ -4,7 +4,7 @@
 
 </div>
 
-	<div class="catalog">
+	<div class="catalog catalog-grid">
 
 		<?php foreach ($content['goods'] as $item): ?>
 

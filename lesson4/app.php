@@ -10,21 +10,33 @@
 
 	Db::getInstance()->connect(HOST, USER, PASS, DB);
 
-	$isAuth = auth();
+//	echo "<pre>";
+//
+//		print_r($_SERVER);
+//		print_r($_GET);
+//		print_r($_SESSION);
+//		print_r($isAuth);
+//
+//	echo "</pre>";
 
-	if ($_POST['metod'] == 'ajax') {
+	if ( $_POST['metod'] == 'ajax' )
+	{
 
-		ob_start(); //Запускаем буферизауию вывода
+		$limit = $_POST['limit']+6;
 
-		$goods = Db::getInstance()->select("select `name`, `price`, `foto`, `date`, `view`, `short_description` from goods limit ?", array($_POST['limit']));
+		$goods = Db::getInstance()->select("select * from goods limit $limit");
+		$str = '';
 
-		$str = ob_get_contents(); //Записываем в переменную то, что в буфере
+		foreach ($goods as $item) {
+			$str .= getItemHtml(null, $item);
+		}
 
-		ob_end_clean(); //Очищаем буфер
+		echo json_encode($str);
 
-		echo json_encode($goods);
+		die;
 
-	} elseif (isset($_POST['auth'])) {
+	} elseif ( isset($_POST['auth']) )
+	{
 
 		$login = htmlspecialchars($_POST['auth_login']);
 		$password = htmlspecialchars($_POST['auth_pass']);
@@ -49,14 +61,20 @@
 
 		}
 
-	} elseif (isset($_GET['logout'])) {
+		require 'templates/bases.php';
+
+	} elseif ( isset($_GET['logout']) )
+	{
 
 		/* Выход пользователя при нажатии на кнопку "Выйти" */
 
 		$isAuth = UserExit();
 		header("Location: /");
 
-	} else {
+	} else
+	{
+
+		$isAuth = auth();
 
 		$url_array = getUriArr('/');
 
@@ -77,18 +95,7 @@
 
 	}
 
-//	echo "<pre>";
-//
-//		print_r($_SERVER);
-//		print_r($_GET);
-//		print_r($_SESSION);
-//		print_r($isAuth);
-//
-//	echo "</pre>";
-
-
-
-	// echo "<pre style='display: block;height: 300px;'>";
+//	echo "<pre style='display: block;height: 300px;'>";
 
 		//print_r($url_array);
 		//print_r($content);
@@ -96,4 +103,4 @@
 		//print_r($isAuth);
 		//print_r($ERRORS);
 
-	// echo "</pre>";
+//	echo "</pre>";

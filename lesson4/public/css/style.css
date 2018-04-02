@@ -775,3 +775,18 @@ footer {
 .error_input {
     border: 1px solid red;
 }
+
+.show_more {
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: #26d2fc;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+}
+
+.show_more:hover {
+    cursor: pointer;
+    border-bottom: 2px solid gray;
+}
