@@ -61,6 +61,20 @@
 
 		}
 
+		$url_array = getUriArr('/');
+
+		if ( $url_array[1] == "" )
+		{
+
+			$page_name = "index";
+
+		}	else {
+
+			$page_name = $url_array[1];
+
+		}
+
+		$content = prepareVariables($page_name);
 		require 'templates/bases.php';
 
 	} elseif ( isset($_GET['logout']) )
@@ -90,7 +104,6 @@
 		}
 
 		$content = prepareVariables($page_name);
-
 		require 'templates/bases.php';
 
 	}

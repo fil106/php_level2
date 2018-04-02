@@ -11,7 +11,7 @@
 
 		<div style="color: red"><?= array_shift($ERRORS) ?></div>
 
-		<form id="auth_form" action="/" method="POST">
+		<form id="auth_form" action="/auth" method="POST">
 
 			<label for="auth_login">Your Login</label>
 			<input id="auth_login" name="auth_login" type="text" value="<?= $_POST['auth_login'] ?>">
