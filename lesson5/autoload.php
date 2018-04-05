@@ -11,7 +11,7 @@
 		$dirs = [
 				'controller',
 				'lib',
-				'model/'
+				'model'
 		];
 		$found = false;
 		//Имя файла формируется из имени класса и '.class.php'
@@ -24,8 +24,8 @@
 			}
 		}
 		if (!$found) {
-			header("Location: /page404/");
-	//        throw new Exception('Нет файла класса для загрузки: ' . $className . $fileName);	//Если файл с классом не найдет, то выводим сообщение
+//			header("Location: /page404/");
+	        throw new Exception('Нет файла класса для загрузки: ' . $className . $fileName);	//Если файл с классом не найдет, то выводим сообщение
 		}
 		return true;
 	}

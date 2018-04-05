@@ -19,4 +19,4 @@ RewriteRule .* - [L]
 # site.ru/primer/, сервер через .htaccess будет обрабатывать команду — site.ru?id_news=primer
 #RewriteRule ^([a-z]+)/$ ?id_news=$1 [L]
 
-RewriteRule ^(.*)$ ?path=$1 [QSA,L]
+RewriteRule ^(.*)/$ ?path=$1 [QSA,L]

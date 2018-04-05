@@ -37,7 +37,7 @@
 		 * write $db
 		 * Метод выполняет соединение с БД
 		 */
-		public function connect($host = 'localhost', $user, $password, $dbname, $port = 3306)
+		public function connect($host, $user, $password, $dbname, $port)
 		{
 
 			// DSN - database source name

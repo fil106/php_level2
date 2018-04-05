@@ -7,7 +7,7 @@ class Config
 	public static function get($parameter)
 	{
 		//используется метод быстрого получения элемента массива
-		//Вщзвращается элемент массива заданный $parameter
+		//Возвращается элемент массива заданный $parameter
 		if (!isset(self::getCurrentConfiguration()[$parameter])) {
 			throw new Exception('Parameter ' . $parameter . ' does not exists');
 		}

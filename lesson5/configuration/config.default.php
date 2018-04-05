@@ -4,9 +4,10 @@
 	 * База данных
 	 */
 	$config['db_user'] = 'root';
-	$config['db_password'] = '';
+	$config['db_password'] = '2402';
 	$config['db_base'] = 'GU';
-	$config['db_host'] = 'localhost';
+	$config['db_host'] = '127.0.0.1';
+	$config['db_port'] = '3306';
 	$config['db_charset'] = 'UTF-8';
 
 	$config['path_root'] = __DIR__;
@@ -24,7 +25,7 @@
 	$config['path_logs'] = $config['path_root'] . '/../logs';
 
 	$config['sitename'] = 'Интернет-магазин | ';
-	$config['domain'] = 'http://php2-5p/';
+	$config['domain'] = 'http://surf.loc/';
 
 	/*
 	 * Конфигурация фотогаллереи
