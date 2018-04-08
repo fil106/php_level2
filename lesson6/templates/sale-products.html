@@ -1,0 +1,29 @@
+<div class="sale_products">
+
+	<h1>Sale products</h1>
+
+	<div class="catalog">
+
+		{% for item in content_data.new_product %}
+
+		<div class="item">
+
+			<a href="{{ domain }}good/{{ item.id_good }}/">
+
+				<span class="item_"></span>
+
+				<img src="{{ domain }}{{ item.foto }}" alt="{{ item.name }}">
+
+				<span class="item_name">{{ item.name }}</span>
+
+				<span class="item_price">€ {{ item.price }}</span>
+
+			</a>
+
+		</div>
+
+		{% endfor %}
+
+	</div>
+
+</div>
