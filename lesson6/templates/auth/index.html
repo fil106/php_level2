@@ -19,7 +19,9 @@
 
 					<h3>Page Sign In</h3>
 
-					<form id="auth_form" action="/index.php" method="POST">
+					<p id="auth_error"></p>
+
+					<form id="auth_form" method="POST">
 
 						<label for="auth_login">Your Login</label>
 						<input id="auth_login" name="auth_login" type="text" value="{{ POST['auth_login'] }}">
@@ -29,7 +31,7 @@
 
 						<p class="error"></p>
 
-						<input name="auth-page" type="submit" value="Enter">
+						<a name="auth-page" onclick="autoriz()">Enter</a>
 
 					</form>
 

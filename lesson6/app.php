@@ -11,12 +11,11 @@
 
 			ob_start(); //Запускаем буферизауию вывода
 
-			db::getInstance()->Connect(Config::get('db_user'), Config::get('db_password'), Config::get('db_base'));
-
+			db::getInstance()->Connect(Config::get('db_host'), Config::get('db_user'), Config::get('db_password'), Config::get('db_base'), Config::get('db_port'));
 
 			$PageAjax = $_POST['PageAjax'];	//Получаем действие на AJAX
 			$data = Ajax::$PageAjax();
-			$view = Ajax::$views;
+			$view = Ajax::$view;
 
 			$loader = new Twig_Loader_Filesystem(Config::get('path_templates'));
 			$twig = new Twig_Environment($loader);
@@ -29,9 +28,11 @@
 
 			echo json_encode($str);
 
-		}
+		} else {
 
-		App::Init();
+			App::Init();
+
+		}
 
 	}
 	catch (PDOException $e) {

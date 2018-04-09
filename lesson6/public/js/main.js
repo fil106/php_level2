@@ -62,15 +62,46 @@ $(document).ready(function() {
 
   });
 
-  function autoriz(){
-    var login = encodeURI(document.getElementById('register_login').value);
-    var password = encodeURI(document.getElementById('register_pass').value);
-    var rememberme = encodeURI(document.getElementById('rememberme').checked);
-    $.ajax({ type: 'POST', url: '/index.php', data: { metod: 'ajax', PageAjax: 'register', var3: rememberme2, login: login, pass: password, rememberme: rememberme}, success: function(response){
-        $('#autorize').html(response);
-      },
-      dataType:"json"
-    });
-  };
-
 });
+
+function autoriz(){
+
+  var login = encodeURI(document.getElementById('auth_login').value);
+  var password = encodeURI(document.getElementById('auth_pass').value);
+  var rememberme = encodeURI(document.getElementById('auth_remember').checked);
+  $.ajax({
+    type: 'POST',
+    url: '/index.php',
+    data: {
+      metod: 'ajax',
+      PageAjax: 'autoriz',
+      login: login,
+      pass: password,
+      rememberme: rememberme},
+    success: function(response){
+
+      $('.content_blk').html(response);
+
+    },
+    error: function(jqXHR, exception)
+    {
+
+      if (jqXHR.status === 0) {
+        alert('Not connect.\n Verify Network.');        //  не включен инет
+      } else if (jqXHR.status == 404) {
+        alert('Requested page not found. [404]');       // нет такой страницы
+      } else if (jqXHR.status == 500) {
+        alert('Internal Server Error [500].');          // нет сервера такого
+      } else if (exception === 'parsererror') {
+        alert(jqXHR.responseText);                      // ошибка в коде при парсинге
+      } else if (exception === 'timeout') {
+        alert('Time out error.');                       // недождался ответа
+      } else if (exception === 'abort') {
+        alert('Ajax request aborted.');                 // прервался на стороне сервера
+      } else {
+        alert('Uncaught Error.\n' + jqXHR.responseText);// не знает что это
+      }
+    }, // error
+    dataType:"json"
+  });
+}

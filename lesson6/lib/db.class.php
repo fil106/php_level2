@@ -25,8 +25,7 @@
 
 		/*
 		 * Запрещаем копировать объект
-		 * Пока не понимаю, что это значит
-		 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		 *
 		 */
 		private function __construct() {}
 		private function __sleep() {}
@@ -37,7 +36,7 @@
 		 * write $db
 		 * Метод выполняет соединение с БД
 		 */
-		public function connect($host, $user, $password, $dbname, $port)
+		public function connect($host, $user, $password, $dbname, $port = 3306)
 		{
 
 			// DSN - database source name

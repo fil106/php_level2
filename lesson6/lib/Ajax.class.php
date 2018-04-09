@@ -3,14 +3,16 @@
 	class Ajax
 	{
 
-		public static $views;
+		public static $view;
 
 		public static function autoriz()
 		{
 
-			self::$views = 'auth/index.html';
+			self::$view = 'auth/auth.php';
 
-			return ['isAuth' => Auth::logIn($_POST['login'], $_POST['pass'], $_POST['rememberme'])];
+			return [
+				'isAuth' => Auth::logIn($_POST['login'], $_POST['pass'], $_POST['rememberme']),
+			];
 
 		}
 

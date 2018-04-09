@@ -754,6 +754,18 @@ footer {
     display: inline-block;
 }
 
+#auth_form > a {
+    border: none;
+    padding: 10px 25px;
+    transition: all .3s;
+    background-color: #c9c5c8;
+}
+
+#auth_form > a:hover {
+    cursor: pointer;
+    background-color: #26d2fc;
+}
+
 .register_blk form input[type="submit"] {
     margin-top: 20px;
     text-transform: uppercase;

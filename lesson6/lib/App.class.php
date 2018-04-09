@@ -80,9 +80,6 @@ class App
 			$controllerName = $_GET['page'] . 'Controller';
 			$methodName = isset($_GET['action']) ? $_GET['action'] : 'index';
 
-//			echo $controllerName . ' ' . $methodName;
-//			print_r($_GET);
-
 			$controller = new $controllerName();
 			$controller->$methodName();
 
