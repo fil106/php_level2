@@ -78,30 +78,29 @@ function autoriz(){
       login: login,
       pass: password,
       rememberme: rememberme},
-    success: function(response){
+    success: function(){
 
-      $('.content_blk').html(response);
+      location.reload(true);
 
     },
-    error: function(jqXHR, exception)
-    {
+    dataType:"json"
+  });
+}
 
-      if (jqXHR.status === 0) {
-        alert('Not connect.\n Verify Network.');        //  не включен инет
-      } else if (jqXHR.status == 404) {
-        alert('Requested page not found. [404]');       // нет такой страницы
-      } else if (jqXHR.status == 500) {
-        alert('Internal Server Error [500].');          // нет сервера такого
-      } else if (exception === 'parsererror') {
-        alert(jqXHR.responseText);                      // ошибка в коде при парсинге
-      } else if (exception === 'timeout') {
-        alert('Time out error.');                       // недождался ответа
-      } else if (exception === 'abort') {
-        alert('Ajax request aborted.');                 // прервался на стороне сервера
-      } else {
-        alert('Uncaught Error.\n' + jqXHR.responseText);// не знает что это
-      }
-    }, // error
+function logout(){
+
+  $.ajax({
+    type: 'POST',
+    url: '/index.php',
+    data: {
+      metod: 'ajax',
+      PageAjax: 'logout'
+    },
+    success: function(){
+
+      location.reload(true);
+
+    },
     dataType:"json"
   });
 }

@@ -1,0 +1,26 @@
+{% if isAuth %}
+
+	<h2>You are welcome, <b>{{ user.surname }} {{ user.name }}</b></h2>
+	<a class="btn btn-danger" href="?logout">Logout</a>
+
+{% endif %}
+
+{% if isAuth == false %}
+
+	<h1>Page Sign Up</h1>
+
+	<form id="auth_form" method="POST">
+
+		<label for="auth_login">Your Login</label>
+		<input id="auth_login" name="auth_login" type="text">
+		<label for="auth_pass">Your Password</label>
+		<input id="auth_pass" name="auth_pass" type="password">
+		<input id="auth_remember" name="auth_remember" type="checkbox" value="true"><span> - remember me</span>
+
+		<p class="error"></p>
+
+		<a name="auth" type="submit" onclick="autoriz()">Log in now</a>
+
+	</form>
+
+{% endif %}

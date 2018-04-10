@@ -737,6 +737,19 @@ footer {
     text-transform: uppercase;
 }
 
+.register fieldset {
+    border-left: 1px solid red;
+    padding: 10px;
+}
+
+.register label {
+    width: 200px;
+}
+
+.register legend {
+    background-color: transparent;
+}
+
 .content_blk, .register_blk {
     padding: 20px;
 }
@@ -801,4 +814,8 @@ footer {
 .show_more:hover {
     cursor: pointer;
     border-bottom: 2px solid gray;
+}
+
+.btn:hover {
+    cursor: pointer;
 }

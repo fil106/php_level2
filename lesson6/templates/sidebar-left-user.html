@@ -1,8 +1,8 @@
-{%	if IdUserSession %}
+{%	if isAuth %}
 
 	<div class="sidebar_user">
-		<h2>Greetings, <b><?= $_SESSION['login'] ?></b></h2>
-		<a class="btn btn-danger" href="?logout">LOGOUT</a>
+		<h3>Greetings<br><b>{{ user.surname }} {{ user.name }}</b></h3>
+		<button class="btn btn-danger " onclick="logout()">LOGOUT</button>
 	</div>
 
 {% endif %}

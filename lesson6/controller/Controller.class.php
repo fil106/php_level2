@@ -15,7 +15,7 @@
 					'BreadCrumbs' => Bread::BreadCrumbs(explode("/", $_SERVER['REQUEST_URI'])),
 					'isAuth' => Auth::logIn(),
 					'microtime' => microtime(true),
-					'IdUserSession' => $_SESSION['IdUserSession']
+					'user' => User::getUserData($_SESSION['id_user']),
 			];
 
 		}

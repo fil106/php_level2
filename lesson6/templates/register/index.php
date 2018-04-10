@@ -10,7 +10,7 @@
 
 			<div class="content_blk">
 
-				{% include 'auth/auth.html' %}
+				{% include 'register/register.phtml' %}
 
 			</div>
 

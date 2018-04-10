@@ -8,11 +8,19 @@
 		public static function autoriz()
 		{
 
-			self::$view = 'auth/auth.php';
+			self::$view = 'auth/auth.html';
 
-			return [
-				'isAuth' => Auth::logIn($_POST['login'], $_POST['pass'], $_POST['rememberme']),
-			];
+			return [ 'isAuth' => Auth::logIn($_POST['login'], $_POST['pass'], $_POST['rememberme'])	];
+
+		}
+
+		public static function logout()
+		{
+			self::$view = 'index.html';
+
+			Auth::UserExit();
+
+			return true;
 
 		}
 

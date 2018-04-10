@@ -14,7 +14,7 @@
 			db::getInstance()->Connect(Config::get('db_host'), Config::get('db_user'), Config::get('db_password'), Config::get('db_base'), Config::get('db_port'));
 
 			$PageAjax = $_POST['PageAjax'];	//Получаем действие на AJAX
-			$data = Ajax::$PageAjax();
+			$data = Ajax::$PageAjax(); 			//Получает isAuth
 			$view = Ajax::$view;
 
 			$loader = new Twig_Loader_Filesystem(Config::get('path_templates'));

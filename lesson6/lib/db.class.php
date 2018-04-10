@@ -77,7 +77,7 @@
 		/*
 		 * Метод выполняет запрос с выборкой данных для одной строки
 		 */
-		public function selectRow($sql, array $values = [])
+		public function SelectRow($sql, array $values = [])
 		{
 
 			$stmt = $this->query($sql, $values);

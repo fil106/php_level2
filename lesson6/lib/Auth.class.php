@@ -64,7 +64,7 @@
 		/*
 		Осуществляем удаление всех переменных, отвечающих за авторизацию пользователя.
 		*/
-		protected static function UserExit()
+		public static function UserExit()
 		{
 			//Удаляем запись из БД об авторизации пользователей
 			$IdUserSession = $_SESSION['IdUserSession'];
@@ -108,7 +108,6 @@
 				];
 			$user_date = db::getInstance()->Select($sql['sql'], $sql['param']);
 
-
 			if ($user_date)
 			{
 				$passHash = $user_date[0]['pass'];
@@ -117,7 +116,6 @@
 				$idUserCookieHash = hash("sha256", $idUserCookie);
 				if (password_verify($password, $passHash))
 				{
-
 					$_SESSION['login'] = $username;
 					$_SESSION['id_user'] = $id_user;
 					$_SESSION['IdUserSession'] = $idUserCookieHash;
