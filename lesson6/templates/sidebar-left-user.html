@@ -1,8 +1,8 @@
 {%	if isAuth %}
 
 	<div class="sidebar_user">
-		<h3>Greetings<br><b>{{ user.surname }} {{ user.name }}</b></h3>
-		<button class="btn btn-danger " onclick="logout()">LOGOUT</button>
+		<h3>Greetings<br><b>{{ isAuth.surname }} {{ isAuth.name }}</b></h3>
+		<button class="btn btn-danger" onclick="logout()">LOGOUT</button>
 	</div>
 
 {% endif %}

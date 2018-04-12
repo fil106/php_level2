@@ -1,13 +1,17 @@
 <?php
 
-	class contactModel extends Model
+	class gridModel extends Model
 	{
 
 		public function index($data = NULL, $deep = 0) 	//Метод с использованием классов для вывода категорий товаров
 		{
+			$this->title .= 'Grid';
 
-			$this->title .= 'Contacts Page';
+			$result['products'] = Product::GetProducts();
 
+			return $result;
 		}
 
 	}
+
+?>

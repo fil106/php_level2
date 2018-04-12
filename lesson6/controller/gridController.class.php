@@ -1,9 +1,9 @@
 <?php
 
-	class contactController extends Controller
+	class gridController extends Controller
 	{
 
-		public $view = 'contact';
+		public $view = 'grid';
 
 		public function index()
 		{

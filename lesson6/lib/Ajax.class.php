@@ -14,16 +14,6 @@
 
 		}
 
-		public static function logout()
-		{
-			self::$view = 'index.html';
-
-			Auth::UserExit();
-
-			return true;
-
-		}
-
 		public static function see_additional_goods()
 		{
 
@@ -33,6 +23,13 @@
 			$count = $_POST['count'];
 			$data = $_POST['category'];
 			return ['content_data' => $model->sub_catalog($data, $nStart, $count)];
+
+		}
+
+		public static function getProducts($limit)
+		{
+
+			return Product::GetProducts(6);
 
 		}
 

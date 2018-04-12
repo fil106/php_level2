@@ -51,7 +51,7 @@
 					[
 						'hash_cookie' => $_SESSION['IdUserSession'],
 					];
-				$isAuth = db::getInstance()->select($sql['sql'], $sql['param']);
+				$isAuth = db::getInstance()->SelectRow($sql['sql'], $sql['param']);
 			}
 
 			return $isAuth;

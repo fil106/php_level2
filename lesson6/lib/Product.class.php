@@ -22,4 +22,9 @@
 			return db::getInstance()->selectRow("select * from goods where id_good = $id");
 		}
 
+		public static function GetProducts($quantity = 9, $sort = 'desc')
+		{
+			return db::getInstance()->select("select * from goods order by view $sort, date desc limit $quantity");
+		}
+
 	}

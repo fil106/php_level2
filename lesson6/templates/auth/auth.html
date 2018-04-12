@@ -1,7 +1,7 @@
 {% if isAuth %}
 
-	<h2>You are welcome, <b>{{ user.surname }} {{ user.name }}</b></h2>
-	<a class="btn btn-danger" href="?logout">Logout</a>
+	<h2>You are welcome, <b>{{ isAuth.surname }} {{ isAuth.name }}</b></h2>
+	<button class="btn btn-danger" onclick="logout()">LOGOUT</button>
 
 {% endif %}
 
